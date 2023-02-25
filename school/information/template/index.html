@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django Display Images</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<table class="table table-striped">
+    <thead>
+      <tr>
+		<th>NAME</th>
+    <th>PASSWORD</th>
+		<th>IMAGES</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for img in images %}  
+      <tr> 
+      <td>{{img.id}}</td>
+      <td><a href="{{img.NAME}}">{{img.NAME}}</a></td>
+      <td>{{img.PASSWORD}}</td>
+	  	<td><img src="{{img.IMAGES.url}}" width="120"/></td>
+      </tr>
+	  {% endfor %}
+	</tbody>
+</table>	
+</div>
+{% for img in images %} 
+		<img src="{{img.IMAGES.url}}" width="120"/>
+      
+	  {% endfor %} 
+	
+    {% for item in image.item_set.all %}
+    
+    <a href="{%url 'check' check_id=check.id %}"><button class ="btn btn-primary" type ="button" name="button">{{item.id}}</button></a>
+
+
+{% endfor %}
+</body>
+</html>
+
+

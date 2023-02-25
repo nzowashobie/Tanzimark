@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@pdftron/pdfjs-express": "^8.7.0",
+    "@pdftron/pdfjs-express-viewer": "^8.7.0",
+    "npm": "^8.19.2"
+  },
+  "devDependencies": {
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  }
+}

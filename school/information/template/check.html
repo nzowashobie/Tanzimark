@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang ='eng'>
+<head>
+  
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<title> pay_slip</title> 
+   <style>
+
+*{
+           box-sizing: border-box;
+
+       }
+    body{
+        background-color: darkolivegreen;;
+    }   
+       nav{
+           background-color:gold;
+           width:100%;
+           overflow: auto;
+       }
+ ul{
+            margin: 0;
+            padding:0;
+            list-style:none;
+
+        }   
+ li{
+     float:inline-start;
+ }   
+ul{
+    float:none;
+    margin: 40px;
+}
+ 
+
+     footer#page_footer{
+clear: both;
+width: 100%;
+display: block;
+text-align: center;
+}
+These
+body{background-color: rgb(108, 172, 23);}
+tr:nth-child(even)
+{background-color: blueviolet;}
+
+</style>
+     
+<div class="jumbotron">
+    <h1> Shobie's world</h1>
+</div>
+</head>
+<body> 
+    
+    {% csrf_token %} 
+    <div class="container">
+        <ul>
+    <h1>Pay_slip for LZ {{images}}</h1>
+
+    {%if images%}
+    <img src="{{images.IMAGES.url}}" width="620"/>
+    <a href="{{images.IMAGES.url}}" download><button class ="btn btn-danger" type ="button" name="button">download</button></a>
+    </div>
+    {%else%}
+    <h1>no DATA</h1>
+    {%endif%}
+    {% for image in images.item_set.all %}
+    
+    <a href="{%url 'item' check_id=check.id %}"><button class ="btn btn-primary" type ="button" name="button">{{item.id}}</button></a>
+
+
+{% endfor %}
+</div>
+</ul>
+</body>
+<section id="sidebar">
+    <footer id="page_footer">
+        <p>&copy; 2020 Shobie's World</p>
+        <nav>
+        <ul>
+        <li><a href="http://Shobie/">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+        </nav>
+        </footer>
+    </head>
+</html> 
+

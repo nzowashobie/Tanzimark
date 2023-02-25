@@ -1,0 +1,14 @@
+{
+    "staticFiles": {
+      "staticPath": [
+        {
+          "staticPath": "node_modules/@pdftron/pdfjs-express/public",
+          "staticOutDir": "public/pdfjsexpress"
+        }
+      ],
+      "watcherGlob": "**"
+    }
+  }
+  
+  
+  

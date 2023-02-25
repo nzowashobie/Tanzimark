@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet"
+ type ="text/css" 
+ href ="base.css">
+ {% extends 'header.html' %}
+ {% block content %}
+<title> Test Papers</title> 
+   <style>
+
+*{
+           box-sizing: border-box;
+
+       }
+    body{
+        background-color: rgb(116, 116, 148);;
+       
+        margin:50px 0; 
+        padding:0;
+        text-align:center;
+      
+}
+.formstyle {
+    
+    background-color: black;
+    width: 300px;
+    height: 200px;
+    margin: 80px auto;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 5px solid #009688;
+    box-shadow: 0px 0px 0px 0px #3f51b5;
+   
+}
+.jumbotron {
+    height: 100px;
+    margin:0 auto;
+    text-align:left;
+    padding:15px;
+    border:1px dashed rgb(218, 74, 74);
+    background-color:#eee;
+}
+.jumbotron h2{
+    text-align: center;
+}
+     
+       nav{
+           background-color:rgb(117, 112, 65);
+           width:100%;
+           overflow: auto;
+       }
+ ul{
+            margin: 50;
+            padding:0;
+            list-style:none;
+
+        }   
+ li{
+     float:inline-start;
+ }   
+ul{
+    float:inline-end;
+    margin: 40px;
+}
+     footer#page_footer{
+clear: both;
+width: 100%;
+display: block;
+text-align: center;
+}
+These
+body{background-color: #bbbe1e;}
+tr:nth-child(even)
+{background-color: #2be259;}
+
+.head {
+            color: white;
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 4vw;
+            letter-spacing: 10px;
+            color: rgb(255, 0, 0);
+            padding-top: 20px;
+            font-family: 'Cabin Sketch', cursive;
+        }
+
+.top {
+    color: white;
+            font-family: 'Sedgwick Ave Display', cursive;
+            font-size: 4vw;
+            letter-spacing: 10px;
+            color: black;
+            text-align:right;
+            padding-top: 20px;
+            font-family: 'Cabin Sketch', cursive;
+}
+
+
+</style>
+{% load static %}
+<div class="head">
+    
+    <img src="{% static 'images/logo.jpg' %}" width="90" height="90">
+</br>
+    <strong>Management Board </strong>
+</div>
+</head>
+
+<div class="top">
+   <h5 style="color:black;">{{images}}</h5>
+</div>
+
+    <div class="jumbotron">
+        <a href="/"><button class ="btn btn-danger" type ="button" name="button">Memos</button></a>
+        <a href="/"><button class ="btn btn-danger" type ="button" name="button">Resources</button></a>
+        <p> Lithur School of Applied Arts </p>
+    </div>
+
+</head>
+
+<body>
+    {% load crispy_forms_tags %}
+<div class="formstyle">
+    
+    <navstyle>
+        <form action="{% url 'search_results' %}" method="get"> 
+            {% csrf_token %}
+            {{ ImageForm|crispy }}
+            <h3 style="color:hsl(0, 4%, 5%);">   <input name="s" type="text" placeholder="Student name..."></p></h3>
+            <h3 style="color:rgb(12, 12, 12);"> <input name="q" type="text" placeholder="Subject..."></p></h3>
+            <h3 style="color:rgb(12, 12, 12);">  <input name="g" type="text" placeholder="Grade..."></p></h3>
+            <h3 style="color:rgb(12, 12, 12);">  <input name="p" type="password" placeholder="password..."></p></h3>
+            <button class ="btn btn-success" input type="submit" value="search">Ok</button>
+            </form> 
+            
+</div>        
+{% endblock %}
+ 
+</body>
+</html>

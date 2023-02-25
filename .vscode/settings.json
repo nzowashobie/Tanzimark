@@ -1,0 +1,5 @@
+{
+    "npm.enableTouchbar": true,
+    "npm.oldKeybindings.enable": true,
+    "git.ignoreLimitWarning": true
+}

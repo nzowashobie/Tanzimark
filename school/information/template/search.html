@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+      
+    <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
+      integrity="sha512-1fPmaHba3v4A7PaUsComSM4TBsrrRGs+/fv0vrzafQ+Rw+siILTiJa0NtFfvGeyY5E182SDTaF5PqP+XOHgJag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+<title> Test Papers</title> 
+   <style>
+
+*{
+           box-sizing: border-box;
+
+       }
+    body{
+       
+        background-color: whitesmoke;
+       
+        margin:50px 0; 
+        padding:0;
+         text-align:center;
+}
+.container {
+    max-width: 700px;
+    margin:auto;
+    background-color: rgb(22, 21, 22);
+    overflow: auto;
+}
+.gallery iframe{
+    width: 690px;
+    height: 690px;
+}
+
+#Content {
+    width:500px;
+    margin:0 auto;
+    text-align:left;
+    padding:15px;
+    border:1px dashed #333;
+    background-color:#eee;
+    }
+     
+     
+      
+       nav{
+           background-color:gray;
+           width:100%;
+           overflow: auto;
+           
+       }
+ ul{
+            margin: 0;
+            padding:0;
+            list-style:none;
+
+        }   
+ li{
+     float:inline-start;
+ }   
+ul{
+    float:none;
+    margin: 40px;
+}
+nav a{
+     width: 90px;
+     display: block;
+     text-decoration: none;
+     text-align: center;
+     font-size: 11px;
+     color: black;
+     padding: 20px 10px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+nav a:hover{
+         background-color: blue;
+         color:white;
+}
+footer#page_footer{
+    clear: both;
+    width: 100%;
+    display: block;
+    text-align: center;
+  
+
+}
+.jumbotron{
+    height: 20px;
+}
+These
+body{background-color: rgb(108, 172, 23);}
+tr:nth-child(even)
+{background-color: blueviolet;}
+
+</style>
+{% load static %}
+<div class="jumbotron">
+    <h4> Lithur School</h4>
+</div>
+{% for images in object_list %}
+<h4>Answer Papers for </h4><h3 style="color:red;">{{images}}</h3> 
+
+</head>
+<body>
+    <div class="logout">
+        <a href="{%url 'login'%} "><button class ="btn btn-primary" type ="button" name="button">logout</button></a>
+    </div>
+  
+    <ul> 
+           <div class="container">
+                <div class="gallery">
+            <iframe src="{{images.IMAGES.url}}" frameborder="0"></iframe> </br>
+           
+        </ul> 
+        </div>
+    </div>
+                <a href="{{images.IMAGES.url}}" download><button class ="btn btn-danger" type ="button" name="button">download</button></a>
+     
+        {% endfor %}
+      
+        <a href="{%url 'login' %}">&lt;back</a> 
+   
+</body>
+<section id="sidebar">
+   
+ 
+</html>
